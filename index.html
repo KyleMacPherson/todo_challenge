@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head ng-app='ToDoList'>
+<html ng-app='ToDoList'>
+  <head>
     <title>To Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div ng-controller='ToDoController as todo'>
+      <p> {{todo.list.name}} </p>
+    </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
-  </head>
-  <body>
-    {{1+1}}
   </body>
 </html>
