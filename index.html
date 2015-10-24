@@ -5,9 +5,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   </head>
   <body>
-    <div ng-controller='ToDoController as todo'>
-      <p ng-hide='todo.list.completed'> {{todo.list.name}} </p>
-    </div>
+    <form name='taskForm' div ng-controller='ToDoController as todoCtrl' >
+      <textarea name="task" ng-model=(task)></textarea>
+      <button class='btn' ng-click='todoCtrl.addTask(task)'> Submit </button>
+      <div ng-repeat='task in todoCtrl.list'>
+        <p>{{task.name}}</p>
+        <button class='btn' ng-click='todoCtrl.deleteTask($index)'>Delete</button>
+        <button>Completed</button>
+      </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
