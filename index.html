@@ -3,22 +3,29 @@
   <head>
     <title>To Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <style>.done{text-decoration: line-through}</style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body div ng-controller='ToDoController as todoCtrl'>
-    <button class='btn' ng-click='todoCtrl.showActive()'> Show active </button>
-    <button class='btn' ng-click='todoCtrl.showCompleted()'> Show completed </button>
-    <button class='btn' ng-click='todoCtrl.showAll()'> Show all </button>
+    <div id='content'>
+    <div class='container'>
+    <h4>To Do:</h4>
+    <div class="btn-group-sm" role="group">
+      <button class='btn btn-primary' ng-click='todoCtrl.showActive()'> Show active </button>
+      <button class='btn btn-primary' ng-click='todoCtrl.showCompleted()'> Show completed </button>
+      <button class='btn btn-primary' ng-click='todoCtrl.showAll()'> Show all </button>
+    </div>
     <form name='taskForm'>
-      <textarea name="task" ng-model=(task)></textarea>
-      <button class='btn' ng-click='todoCtrl.addTask(task)'> Submit </button>
+      <textarea name="task" ng-model='task'></textarea>
+      <a href='' ng-click='todoCtrl.addTask(task)'><span class='glyphicon glyphicon-ok btn-lg'></a>
       <div ng-repeat='task in todoCtrl.list'>
         <div ng-show='task.showing'>
         <span>{{task.name}}</span>
-        <button class='btn' ng-click='todoCtrl.deleteTask($index)'>Delete</button>
-        <input type='checkbox' ng-click='todoCtrl.markTaskCompleted($index)'>Completed</button>
+        <a href='' ng-click='todoCtrl.markTaskCompleted($index)'><span class='glyphicon glyphicon-ok-sign btn-lg'></span></a>
+        <a href='' ng-click='todoCtrl.deleteTask($index)'><span class='glyphicon glyphicon-remove-circle btn-xs' style="color:red"></span></a>
         </div>
       </div>
+    </div>
+  </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>

@@ -5,7 +5,13 @@
     var self = this;
     this.list = [];
     this.addTask = function (task) {
-      self.list.push({name: task, completed: false, showing: true})
+      var newTask = {
+        name: task,
+        completed: false,
+        showing: true
+      }
+      self.list.push(newTask)
+      self.task = '';
     }
 
     this.deleteTask = function (index) {
