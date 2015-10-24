@@ -3,15 +3,21 @@
   <head>
     <title>To Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <style>.done{text-decoration: line-through}</style>
   </head>
-  <body>
-    <form name='taskForm' div ng-controller='ToDoController as todoCtrl' >
+  <body div ng-controller='ToDoController as todoCtrl'>
+    <button class='btn' ng-click='todoCtrl.showActive()'> Show active </button>
+    <button class='btn' ng-click='todoCtrl.showCompleted()'> Show completed </button>
+    <button class='btn' ng-click='todoCtrl.showAll()'> Show all </button>
+    <form name='taskForm'>
       <textarea name="task" ng-model=(task)></textarea>
       <button class='btn' ng-click='todoCtrl.addTask(task)'> Submit </button>
       <div ng-repeat='task in todoCtrl.list'>
-        <p>{{task.name}}</p>
+        <div ng-show='task.showing'>
+        <span>{{task.name}}</span>
         <button class='btn' ng-click='todoCtrl.deleteTask($index)'>Delete</button>
         <input type='checkbox' ng-click='todoCtrl.markTaskCompleted($index)'>Completed</button>
+        </div>
       </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
