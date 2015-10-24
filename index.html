@@ -8,10 +8,10 @@
     <form name='taskForm' div ng-controller='ToDoController as todoCtrl' >
       <textarea name="task" ng-model=(task)></textarea>
       <button class='btn' ng-click='todoCtrl.addTask(task)'> Submit </button>
-      <div ng-repeat='task in todoCtrl.list'>
+      <div ng-repeat='task in todoCtrl.list' ng-hide='task.completed'>
         <p>{{task.name}}</p>
         <button class='btn' ng-click='todoCtrl.deleteTask($index)'>Delete</button>
-        <button>Completed</button>
+        <button class='btn' ng-click='todoCtrl.markTaskCompleted($index)'>Completed</button>
       </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>

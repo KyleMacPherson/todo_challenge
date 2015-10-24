@@ -10,5 +10,8 @@
     this.deleteTask = function (index) {
       self.list.splice(index, 1);
     }
+    this.markTaskCompleted = function (index) {
+      self.list[index].completed = true
+    };
   });
 })();
