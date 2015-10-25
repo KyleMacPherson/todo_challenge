@@ -15,8 +15,8 @@
       <button class='btn btn-primary' ng-click='todoCtrl.showAll()'> Show all </button>
     </div>
     <form name='taskForm'>
-      <textarea name="task" ng-model='task'></textarea>
-      <a href='' ng-click='todoCtrl.addTask(task)'><span class='glyphicon glyphicon-ok btn-lg'></a>
+      <textarea name="task" ng-model='todoCtrl.task'></textarea>
+      <a href='' ng-click='todoCtrl.addTask(todoCtrl.task)'><span class='glyphicon glyphicon-ok btn-lg'></a>
       <div ng-repeat='task in todoCtrl.list'>
         <div ng-show='task.showing'>
         <span>{{task.name}}</span>
@@ -28,6 +28,6 @@
   </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="app.js"></script>
+    <script src="toDoListController.js"></script>
   </body>
 </html>

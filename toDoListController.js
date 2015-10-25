@@ -5,6 +5,7 @@
     var self = this;
     this.list = [];
     this.addTask = function (task) {
+
       var newTask = {
         name: task,
         completed: false,
