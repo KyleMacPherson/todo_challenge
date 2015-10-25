@@ -1,7 +1,4 @@
-(function () {
-  var toDoList = angular.module('ToDoList', ['ngResource']);
-
-  toDoList.controller('ToDoController', function (){
+toDoList.controller('ToDoController', function (){
     var self = this;
     this.list = [];
     this.addTask = function (task) {
@@ -50,4 +47,3 @@
     };
 
   });
-})();
