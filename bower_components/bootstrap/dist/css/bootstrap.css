@@ -12,6 +12,19 @@ html {
 body {
   margin: 0;
 }
+
+#black {
+  color: #000;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
 article,
 aside,
 details,

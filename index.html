@@ -7,8 +7,9 @@
   </head>
   <body div ng-controller='ToDoController as todoCtrl'>
     <div id='content'>
-    <div class='container'>
-    <h4>To Do:</h4>
+    <div class='container vertical-center'>
+      <div class="col-md-offset-2 col-md-6 text-center">
+    <h1>To Do:</h4>
     <div class="btn-group-sm" role="group">
       <button class='btn btn-primary' ng-click='todoCtrl.showActive()'> Show active </button>
       <button class='btn btn-primary' ng-click='todoCtrl.showCompleted()'> Show completed </button>
@@ -16,7 +17,7 @@
     </div>
     <form name='taskForm'>
       <textarea name="task" ng-model='todoCtrl.task'></textarea>
-      <a href='' ng-click='todoCtrl.addTask(todoCtrl.task)'><span class='glyphicon glyphicon-ok btn-lg'></a>
+      <a href='' ng-click='todoCtrl.addTask(todoCtrl.task)'><span class='glyphicon glyphicon-ok btn-lg' id="black"></a>
       <div ng-repeat='task in todoCtrl.list'>
         <div ng-show='task.showing'>
         <span>{{task.name}}</span>
@@ -26,6 +27,7 @@
       </div>
     </div>
   </div>
+</div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>

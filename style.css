@@ -5,3 +5,8 @@
     right: 1%;
     position: absolute;
 }
+
+body {
+  background-image: url("img/trees.jpg");
+  background-size: cover;
+}
