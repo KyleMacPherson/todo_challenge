@@ -16,13 +16,13 @@
       <button class='btn btn-primary' ng-click='todoCtrl.showAll()'> Show all </button>
     </div>
     <form name='taskForm'>
-      <textarea name="task" ng-model='todoCtrl.task'></textarea>
+      <input type="text" name="task" ng-model='todoCtrl.task'>
       <a href='' ng-click='todoCtrl.addTask(todoCtrl.task)'><span class='glyphicon glyphicon-ok btn-lg' id="black"></a>
       <div ng-repeat='task in todoCtrl.list'>
         <div ng-show='task.showing'>
-        <span>{{task.name}}</span>
+        <span><h2>{{task.name}}</h2></span>
         <a href='' ng-click='todoCtrl.markTaskCompleted($index)'><span class='glyphicon glyphicon-ok-sign btn-lg'></span></a>
-        <a href='' ng-click='todoCtrl.deleteTask($index)'><span class='glyphicon glyphicon-remove-circle btn-xs' style="color:red"></span></a>
+        <a href='' ng-click='todoCtrl.deleteTask($index)'><span class='glyphicon glyphicon-remove-circle btn-lg' style="color:red"></span></a>
         </div>
       </div>
     </div>
