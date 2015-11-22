@@ -2,7 +2,7 @@
 
 A Todo list as a mini front-end application.
 
-![alt text](http://imgur.com/BfdH2AR)
+![alt text](http://i.imgur.com/BfdH2AR.png)
 
 #### User Stories:
 
